@@ -5,10 +5,10 @@ equivalent Markdown-skill and subagent mechanism). It carries a feature from ide
 reviewed code through a chain of skills, with artifacts checked into the repo alongside the code
 they describe.
 
-It started as an extraction from Compozy's bundled `skills/` — the workflow design (PRD → TechSpec → Tasks with a tracked test contract → Execution
-→ Review → Fix, gated by mandatory verification) is Compozy's. What's different here: no daemon,
-no extension system, no multi-runtime CLI, no external review provider — just Markdown skills
-plus one optional bash script, so it drops into any repo without installing a separate binary.
+The pipeline (PRD → TechSpec → Tasks with a tracked test contract → Execution → Review → Fix,
+gated by mandatory verification) is plain Markdown skills plus one optional bash script — no
+daemon, no extension system, no multi-runtime CLI, no external review provider — so it drops into
+any repo without installing a separate binary.
 
 ## Install
 
@@ -34,6 +34,8 @@ It shells out to `claude -p` by default; pass `--agent-cmd "<other headless CLI>
 different runtime.
 
 ## Pipeline
+
+<img src="docs/pipeline.svg" alt="SDD pipeline: sdd-idea (optional) into sdd-create-prd into sdd-create-techspec into sdd-create-tasks into sdd-execute-task into a sdd-review / sdd-fix-reviews loop into merge and archive" width="480" />
 
 ```
 /sdd-idea (optional)  ->  /sdd-create-prd  ->  /sdd-create-techspec  ->  /sdd-create-tasks
@@ -67,7 +69,7 @@ artifact directory layout, the skill table, and the optional `.sdd/config.toml`.
 
 No daemon, no extension system, no multi-agent-runtime CLI, no external review-provider
 integration (CodeRabbit, etc.), and no frontend/TUI-stack skills (React, shadcn, Tailwind,
-TanStack, Bubbletea, ...) — those were specific to Compozy's own codebase, not to the pipeline.
+TanStack, Bubbletea, ...) — those are specific to any one codebase's stack, not to the pipeline.
 If your project needs stack-specific skills, add your own alongside these.
 
 ## Customizing
