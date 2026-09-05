@@ -9,37 +9,39 @@ Structure for `_user_stories.md` — the canonical user-story catalog that ships
 
 ## Document Skeleton
 
-```markdown
-# User Stories: [Feature Name]
+The generated document's headers and prose MUST be written in Portuguese (pt-BR), following this skeleton (already translated):
 
-Canonical behavior catalog for [feature]. Companion to `_prd.md`; consumed by
-`_techspec.md` (component mapping) and `_tests.md` (coverage matrix).
+```markdown
+# Histórias de Usuário: [Nome da Funcionalidade]
+
+Catálogo canônico de comportamento para [funcionalidade]. Complementa `_prd.md`; consumido por
+`_techspec.md` (mapeamento de componentes) e `_tests.md` (matriz de cobertura).
 
 ## Personas
 
-- **[Persona name]** — [who they are, their context, what they need from this feature]
+- **[Nome da persona]** — [quem é, seu contexto, o que precisa desta funcionalidade]
 
-## Story Index
+## Índice de Histórias
 
-| ID     | Feature Area | Persona   | Story                    |
-|--------|--------------|-----------|--------------------------|
-| US-001 | [area]       | [persona] | [one-line story summary] |
+| ID     | Área da Funcionalidade | Persona   | História                  |
+|--------|-------------------------|-----------|----------------------------|
+| US-001 | [área]                  | [persona] | [resumo da história em uma linha] |
 
-## [Feature Area 1]
+## [Área da Funcionalidade 1]
 
-### US-001: [Short title]
+### US-001: [Título curto]
 
-**As a** [persona], **I want** [capability], **so that** [outcome].
+**Como** [persona], **eu quero** [capacidade], **para que** [resultado].
 
-Acceptance criteria:
+Critérios de aceite:
 
-- AC-1: Given [starting context], when [action], then [observable result].
-- AC-2: Given [context], when [action], then [observable result].
+- AC-1: Dado [contexto inicial], quando [ação], então [resultado observável].
+- AC-2: Dado [contexto], quando [ação], então [resultado observável].
 
-Edge cases:
+Casos extremos:
 
-- EC-1: [condition] → [expected behavior the user observes].
-- EC-2: [condition] → [expected behavior].
+- EC-1: [condição] → [comportamento esperado observado pelo usuário].
+- EC-2: [condição] → [comportamento esperado].
 ```
 
 ## Edge-Case Sweep

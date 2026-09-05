@@ -67,7 +67,7 @@ Track each step as a task in the runtime's task tracker when one is available, a
 
 4. Decide the product approach and record ADRs.
    - Choose the strongest direction yourself from the answers and research.
-   - Read `references/adr-template.md`, determine the next number from the files in `.docs/tasks/<slug>/adrs/`, fill the template (chosen direction as Decision, weighed alternatives with trade-offs as Alternatives Considered, outcomes as Consequences; Status "Accepted", Date today), and write `adrs/adr-NNN.md` (zero-padded 3-digit number).
+   - Read `references/adr-template.md`, determine the next number from the files in `.docs/tasks/<slug>/adrs/`, fill the template (chosen direction as Decisão, weighed alternatives with trade-offs as Alternativas Consideradas, outcomes as Consequências; Status "Aceito", Date today), and write `adrs/adr-NNN.md` (zero-padded 3-digit number).
    - Record any additional significant scope decision that surfaced during clarification as its own ADR.
 
 5. Write the user-story catalog.
@@ -79,7 +79,7 @@ Track each step as a task in the runtime's task tracker when one is available, a
 6. Write the PRD.
    - Read `references/prd-template.md` and fill every section with the decided direction and confirmed answers; the template carries the per-section rules.
    - List every ADR from this session in the Architecture Decision Records section.
-   - Prefer active voice and definite, specific language; every sentence earns its place. Language: English.
+   - Prefer active voice and definite, specific language; every sentence earns its place. Language: Portuguese (pt-BR).
    - Write `.docs/tasks/<slug>/_prd.md`.
 
 7. Hand off.

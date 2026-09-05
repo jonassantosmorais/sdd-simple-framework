@@ -42,7 +42,7 @@ This skill is invoked either directly by the user on a single task file, or in a
 
 2. Build the execution checklist.
    - Extract deliverables, acceptance criteria, and every explicit `Validation`, `Test Plan`, or `Testing` item into a numbered working checklist.
-   - Add one checklist line per test-case ID assigned in the task's `## Tests` section, and implement each case as `_tests.md` specifies it — the assigned IDs are part of the deliverable, not a suggestion.
+   - Add one checklist line per test-case ID assigned in the task's `## Testes` section, and implement each case as `_tests.md` specifies it — the assigned IDs are part of the deliverable, not a suggestion.
    - Add one checklist line per concrete contract fact extracted from the contract-bearing spec artifacts (input names/types/defaults/required flags, command and route names, node topologies, declared behaviors) — parity with these facts is part of the deliverable.
    - Include any conflict-resolution decisions from step 1 as checklist lines so the chosen interpretation stays visible during implementation.
    - Print the full checklist before starting implementation so it is visible and trackable.
@@ -52,6 +52,7 @@ This skill is invoked either directly by the user on a single task file, or in a
 3. Implement the task.
    - Keep scope tight to the task specification and the resolved contract interpretation.
    - Follow repository patterns and real dependency APIs.
+   - Write every code comment in Portuguese (pt-BR) — including doc comments/docstrings. Never translate identifiers (variable, function, class, file names), string literals the program depends on, log/error messages unless the task specifies otherwise, or existing third-party code.
    - Record meaningful out-of-scope work as follow-up notes instead of silently expanding the task.
 
 4. Validate and self-review.

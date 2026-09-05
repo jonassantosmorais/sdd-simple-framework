@@ -1,6 +1,6 @@
 # Review Issue Template
 
-Canonical format for `issue_NNN.md` files inside a `reviews-NNN/` review round directory.
+Canonical format for `issue_NNN.md` files inside a `reviews-NNN/` review round directory. Frontmatter keys and enum values (`status`, `severity`, `provider`, the `Decision` values, etc.) MUST stay in English — `sdd-fix-reviews` and other tooling match them literally. The issue title and the Review Comment/Triage prose content MUST be written in Portuguese (pt-BR), using the exact section headers below, translated, as shown.
 
 ```
 ---
@@ -16,13 +16,13 @@ author: sdd-review
 provider_ref:
 ---
 
-# Issue NNN: <title>
+# Issue NNN: <título>
 
-## Review Comment
+## Comentário da Revisão
 
-<detailed review body>
+<detailed review body, in Portuguese>
 
-## Triage
+## Triagem
 
 - Decision: `UNREVIEWED`
 - Notes:

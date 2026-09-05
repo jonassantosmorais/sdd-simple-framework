@@ -120,7 +120,7 @@ You MUST create a task for each phase and complete them in order:
    - After the debate, create an ADR for the scope decision:
      - Read `references/adr-template.md`.
      - Determine the next ADR number by listing existing files in `.docs/tasks/<slug>/adrs/`.
-     - Fill the template: recommended scope as "Decision", alternatives as "Alternatives Considered", trade-offs as "Consequences". Set Status to "Accepted" and Date to today.
+     - Fill the template: recommended scope as "Decisão", alternatives as "Alternativas Consideradas", trade-offs as "Consequências". Set Status to "Aceito" and Date to today.
      - Write the ADR to `.docs/tasks/<slug>/adrs/adr-NNN.md` (zero-padded 3-digit number).
 
 6. Scan for opportunities.
@@ -141,11 +141,11 @@ You MUST create a task for each phase and complete them in order:
 
 7. Draft the idea.
    - Read `references/idea-template.md` and fill every applicable section with gathered context.
-   - Include an "Architecture Decision Records" section listing all ADRs created during this session.
-   - Mandatory sections (ALWAYS include): Overview, Problem (enriched with market data), Core Features, KPIs, Feature Assessment, Council Insights, Out of Scope (V1), Architecture Decision Records, Open Questions.
-   - Optional sections (include when relevant): Summary/Differentiator, Integration with Existing Features, Sub-Features, Cost Estimate.
+   - Include a "Registros de Decisão de Arquitetura" section listing all ADRs created during this session.
+   - Mandatory sections (ALWAYS include): Visão Geral, Problema (enriched with market data), Funcionalidades Principais, KPIs, Avaliação da Funcionalidade, Percepções do Conselho, Fora de Escopo (V1), Registros de Decisão de Arquitetura, Questões Abertas.
+   - Optional sections (include when relevant): Resumo/Diferencial, Integração com Funcionalidades Existentes, Subfuncionalidades, Estimativa de Custo.
    - Prefer active voice, omit needless words, use definite and specific language over vague generalities. Every sentence should earn its place.
-   - Language: **English**. Tone: clear, technical, consistent with existing project artifacts.
+   - Language: **Portuguese (pt-BR)**. Tone: clear, technical, consistent with existing project artifacts.
    - Tables: use markdown tables for structured data. Features: minimum 3, maximum 10, ordered by priority. KPIs: minimum 3, maximum 6, with numeric targets. Exclusions: minimum 3 items with justification.
    - Present the complete draft to the user for review.
 
@@ -215,4 +215,4 @@ digraph idea_factory {
 - **Scope discipline** — Aggressively trim scope to a viable V1
 - **Pipeline awareness** — The idea feeds into `sdd-create-prd`; focus on WHAT and WHY, not HOW
 - **Template compliance** — Every idea MUST follow the canonical template
-- **Language consistency** — Write all idea content in English
+- **Language consistency** — Write all idea content in Portuguese (pt-BR)

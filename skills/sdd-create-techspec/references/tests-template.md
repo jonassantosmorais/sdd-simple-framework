@@ -9,27 +9,29 @@ Structure for `_tests.md` — the canonical test contract that ships alongside `
 
 ## Document Skeleton
 
+The generated document's headers and prose MUST be written in Portuguese (pt-BR), following this skeleton (already translated); keep the `UT-`/`IT-`/`E2E-` ID prefixes and the `happy`/`error`/`boundary`/`concurrency`/`idempotency`/`ordering`/`state` case-class tags in English — they are identifiers referenced across the pipeline:
+
 ```markdown
-# Test Specification: [Feature Name]
+# Especificação de Testes: [Nome da Funcionalidade]
 
-Canonical test contract for [feature]. Companion to `_techspec.md`.
-Derived from `_user_stories.md` (behavior) and `_techspec.md` (components).
+Contrato de testes canônico para [funcionalidade]. Complementa `_techspec.md`.
+Derivado de `_user_stories.md` (comportamento) e `_techspec.md` (componentes).
 
-## Strategy
+## Estratégia
 
-- Frameworks and harnesses: [test framework, fixture strategy, fakes at I/O boundaries]
-- Execution: [how the unit / integration / e2e suites run in this repository]
-- Conventions: [table-driven style, parallelism, naming patterns to follow]
+- Frameworks e harnesses: [test framework, fixture strategy, fakes at I/O boundaries]
+- Execução: [how the unit / integration / e2e suites run in this repository]
+- Convenções: [table-driven style, parallelism, naming patterns to follow]
 
-## Coverage Matrix
+## Matriz de Cobertura
 
-| Source        | Behavior          | Unit           | Integration | E2E     |
+| Origem        | Comportamento     | Unitário       | Integração  | E2E     |
 |---------------|-------------------|----------------|-------------|---------|
 | US-001        | [story summary]   | UT-001, UT-002 | IT-001      | E2E-001 |
 | US-001.EC-1   | [edge case]       | UT-003         | —           | —       |
 | [Component A] | [responsibility]  | UT-010–UT-014  | IT-002      | —       |
 
-## Unit Tests
+## Testes Unitários
 
 ### [Component A] (TechSpec: [section name])
 
@@ -37,13 +39,13 @@ Derived from `_user_stories.md` (behavior) and `_techspec.md` (components).
 - **UT-002** (error): [target] — given [invalid input], returns [the specific error].
 - **UT-003** (boundary): [target] — at [exact boundary value], behaves [expected result].
 
-## Integration Tests
+## Testes de Integração
 
 ### [Boundary or flow]
 
 - **IT-001**: [components wired together] — setup [fixtures/state]; do [action]; expect [observable result across the boundary].
 
-## End-to-End Tests
+## Testes de Ponta a Ponta
 
 ### [User journey] (US-001, US-003)
 

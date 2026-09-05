@@ -1,55 +1,57 @@
-# ADR-XXX: [Title]
+Fill this template with content written in Portuguese (pt-BR), using these exact section headers (already translated):
+
+# ADR-XXX: [Título]
 
 ## Status
 
-[Proposed | Accepted | Deprecated | Superseded by ADR-XXX]
+[Proposto | Aceito | Descontinuado | Substituído pela ADR-XXX]
 
-## Date
+## Data
 
 YYYY-MM-DD
 
-## Context
+## Contexto
 
 [Describe the issue or problem that motivates this decision. Include relevant technical context, constraints, and any forces at play.]
 
-## Decision
+## Decisão
 
 [State the decision that was made. Be specific and clear about what will be done.]
 
-## Alternatives Considered
+## Alternativas Consideradas
 
-### Alternative 1: [Name]
+### Alternativa 1: [Nome]
 
-- **Description**: [Brief description]
-- **Pros**: [List advantages]
-- **Cons**: [List disadvantages]
-- **Why rejected**: [Reason]
+- **Descrição**: [Brief description]
+- **Vantagens**: [List advantages]
+- **Desvantagens**: [List disadvantages]
+- **Motivo da rejeição**: [Reason]
 
-### Alternative 2: [Name]
+### Alternativa 2: [Nome]
 
-- **Description**: [Brief description]
-- **Pros**: [List advantages]
-- **Cons**: [List disadvantages]
-- **Why rejected**: [Reason]
+- **Descrição**: [Brief description]
+- **Vantagens**: [List advantages]
+- **Desvantagens**: [List disadvantages]
+- **Motivo da rejeição**: [Reason]
 
-## Consequences
+## Consequências
 
-### Positive
+### Positivas
 
 - [List positive outcomes]
 
-### Negative
+### Negativas
 
 - [List negative outcomes or trade-offs]
 
-### Risks
+### Riscos
 
 - [List risks and mitigation strategies]
 
-## Implementation Notes
+## Notas de Implementação
 
 [Any specific implementation details, migration steps, or technical notes relevant to this decision.]
 
-## References
+## Referências
 
 - [Link to relevant documents, PRDs, tech specs, or external resources]

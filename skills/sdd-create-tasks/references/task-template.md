@@ -1,26 +1,26 @@
 # Task File Template
 
-Use this structure for every individual task file. The file must start with YAML frontmatter containing the parseable metadata.
+Use this structure for every individual task file. The file must start with YAML frontmatter containing the parseable metadata. Frontmatter keys and enum values (`status`, `type`, `complexity` and their values) MUST stay in English — the pipeline scripts match them literally. All prose, headers, and the `<critical>`/`<requirements>` block content MUST be written in Portuguese (pt-BR), using the exact section headers below, translated, as shown.
 
 ```markdown
 ---
 status: pending
-title: [Task title]
+title: [Título da tarefa]
 type: [one of frontend, backend, docs, test, infra, refactor, chore, bugfix, or a project-specific [tasks].types override]
 complexity: [low, medium, high, critical]
 ---
 
-# Task N: [Title]
+# Tarefa N: [Título]
 
-## Overview
+## Visão Geral
 [2-3 sentences: what slice of the system this task delivers and why it matters in the context of the project.]
 
 <critical>
-- ALWAYS READ the PRD, the TechSpec, and their catalogs (`_user_stories.md`, `_tests.md`) before starting
-- REFERENCE TECHSPEC for implementation details — do not duplicate here
-- FOCUS ON "WHAT" — describe what needs to be accomplished, not how
-- MINIMIZE CODE — show code only to illustrate current structure or problem areas
-- TESTS REQUIRED — implement every test case assigned in ## Tests
+- SEMPRE LEIA o PRD, o TechSpec e seus catálogos (`_user_stories.md`, `_tests.md`) antes de começar
+- CONSULTE O TECHSPEC para detalhes de implementação — não duplique aqui
+- FOQUE NO "O QUÊ" — descreva o que precisa ser feito, não como
+- MINIMIZE CÓDIGO — mostre código apenas para ilustrar a estrutura atual ou pontos problemáticos
+- TESTES OBRIGATÓRIOS — implemente todo caso de teste atribuído em ## Testes
 </critical>
 
 <requirements>
@@ -29,30 +29,30 @@ complexity: [low, medium, high, critical]
 - [Requirement 3]
 </requirements>
 
-## Subtasks
+## Subtarefas
 - [ ] N.1 [Subtask description — WHAT to accomplish]
 - [ ] N.2 [Subtask description]
 - [ ] N.3 [Subtask description]
 
-## Implementation Details
+## Detalhes de Implementação
 [File paths to create or modify and integration points.
 Reference the TechSpec implementation section for code patterns and interface designs.]
 
-### Relevant Files
+### Arquivos Relevantes
 - `path/to/file` — [brief reason this file is relevant]
 
-### Dependent Files
+### Arquivos Dependentes
 - `path/to/dependency` — [brief reason this file is affected]
 
-### Related ADRs
-- [ADR-NNN: Title](../adrs/adr-NNN.md) — Relevance to this task
+### ADRs Relacionadas
+- [ADR-NNN: Título](../adrs/adr-NNN.md) — Relevance to this task
 
-## Deliverables
+## Entregáveis
 - [Concrete output 1]
 - [Concrete output 2]
-- Every test case assigned in `## Tests` implemented and passing **(REQUIRED)**
+- Every test case assigned in `## Testes` implemented and passing **(OBRIGATÓRIO)**
 
-## Tests
+## Testes
 
 Cases assigned from `_tests.md`, the test contract — read each ID's full definition there before writing tests.
 
@@ -62,7 +62,7 @@ Cases assigned from `_tests.md`, the test contract — read each ID's full defin
 
 [When the workflow has no `_tests.md`, list concrete cases inline instead — exact input, condition, and expected result per case.]
 
-## Success Criteria
+## Critérios de Sucesso
 - Every assigned test case implemented and passing
 - [Measurable outcome 1]
 - [Measurable outcome 2]
@@ -71,4 +71,4 @@ Cases assigned from `_tests.md`, the test contract — read each ID's full defin
 ## Guidelines
 
 - Write one subtask per coherent unit of work — WHAT to accomplish, not HOW; robust tasks typically carry 5-12.
-- Sizing, independence, and test-assignment rules live in SKILL.md; the `<critical>` block above ships verbatim in every generated task file.
+- Sizing, independence, and test-assignment rules live in SKILL.md; the `<critical>` block above ships verbatim (in Portuguese) in every generated task file.

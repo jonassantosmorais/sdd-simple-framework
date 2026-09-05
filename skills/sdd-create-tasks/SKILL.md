@@ -39,7 +39,7 @@ Every task becomes one full agent run: a fresh context that re-reads the spec co
    - If `_techspec.md` is missing:
      - Warn the user that tasks will be higher-level without TechSpec implementation guidance.
      - Derive tasks from PRD functional requirements and the `_user_stories.md` catalog instead of TechSpec implementation sections.
-     - During enrichment, rely more heavily on codebase exploration to fill `## Implementation Details`, `### Relevant Files`, and `### Dependent Files`.
+     - During enrichment, rely more heavily on codebase exploration to fill `## Detalhes de Implementação`, `### Arquivos Relevantes`, and `### Arquivos Dependentes`.
      - Mark `<requirements>` with PRD-derived behavioral requirements instead of TechSpec-derived technical requirements.
      - Explicitly call out missing implementation detail gaps in the task body instead of inventing specifics.
    - If both `_prd.md` and `_techspec.md` are missing, stop and ask the user to create at least one first.
@@ -61,7 +61,7 @@ Every task becomes one full agent run: a fresh context that re-reads the spec co
 
 4. Assign the test contract.
    - Assign every `UT-`, `IT-`, and `E2E-` ID from `_tests.md` to exactly one task — the task that implements the behavior the case verifies. Integration and E2E cases go to the task that completes the flow they exercise.
-   - Done when every ID in `_tests.md` appears in exactly one task's planned `## Tests` section: no orphan IDs, no duplicates.
+   - Done when every ID in `_tests.md` appears in exactly one task's planned `## Testes` section: no orphan IDs, no duplicates.
    - If `_tests.md` is missing: warn the user, then write concrete inline cases per task instead — each naming the exact input, condition, and expected result (e.g., "POST /job/done with unknown job ID returns 404"), never a vague "test the happy path".
 
 5. Present the task breakdown for interactive approval.
@@ -83,7 +83,7 @@ Every task becomes one full agent run: a fresh context that re-reads the spec co
            to: task_02
      ---
 
-     # [Feature Name] Task List
+     # Lista de Tarefas: [Nome da Funcionalidade]
      ```
    - `_tasks.md` is the only place dependency relationships are stored. Each edge means `from` must finish before `to` can start.
    - Include every task in `graph.nodes`, using canonical sequential ids (`task_01`, `task_02`, ...) and matching files (`task_01.md`, `task_02.md`, ...).
@@ -93,28 +93,29 @@ Every task becomes one full agent run: a fresh context that re-reads the spec co
    - Task numbering must be sequential and consistent between `_tasks.md` and individual files.
 
 7. Enrich each task file.
-   - For each task file, check whether it already has `## Overview`, `## Deliverables`, and `## Tests` sections. If all three exist, skip enrichment for that file.
+   - For each task file, check whether it already has `## Visão Geral`, `## Entregáveis`, and `## Testes` sections. If all three exist, skip enrichment for that file.
    - Map the task to PRD requirements, user stories, and TechSpec guidance.
    - Spawn an Agent tool call to discover relevant files, dependent files, integration points, and project rules for this specific task.
    - Fill ALL template sections from `references/task-template.md`. Every task file MUST contain each of the following sections — omitting any is a failure:
-     - `## Overview`: what slice of the system the task delivers and why, in 2-3 sentences.
+     - `## Visão Geral`: what slice of the system the task delivers and why, in 2-3 sentences.
      - `<critical>` block: the standard critical reminders block from the template.
      - `<requirements>` block: specific, numbered technical requirements using MUST/SHOULD language.
-     - `## Subtasks`: checklist items describing WHAT, not HOW — one per coherent unit of work, typically 5-12 for a robust task.
-     - `## Implementation Details`: file paths to create or modify, integration points. Reference TechSpec for patterns.
-     - `### Relevant Files`: discovered paths from codebase exploration with brief reasons.
-     - `### Dependent Files`: files that will be affected by this task with brief reasons.
-     - `### Related ADRs`: links to relevant ADRs if any exist, or omit the subsection if none apply.
-     - `## Deliverables`: concrete outputs, including every assigned test case implemented and passing.
-     - `## Tests`: the assigned test-case IDs grouped by level with the behavior they cover; full case definitions stay in `_tests.md`.
-     - `## Success Criteria`: measurable outcomes including "Every assigned test case implemented and passing".
+     - `## Subtarefas`: checklist items describing WHAT, not HOW — one per coherent unit of work, typically 5-12 for a robust task.
+     - `## Detalhes de Implementação`: file paths to create or modify, integration points. Reference TechSpec for patterns.
+     - `### Arquivos Relevantes`: discovered paths from codebase exploration with brief reasons.
+     - `### Arquivos Dependentes`: files that will be affected by this task with brief reasons.
+     - `### ADRs Relacionadas`: links to relevant ADRs if any exist, or omit the subsection if none apply.
+     - `## Entregáveis`: concrete outputs, including every assigned test case implemented and passing.
+     - `## Testes`: the assigned test-case IDs grouped by level with the behavior they cover; full case definitions stay in `_tests.md`.
+     - `## Critérios de Sucesso`: measurable outcomes including "Every assigned test case implemented and passing".
+   - Write all prose (Overview, Subtasks, Implementation Details, Deliverables, Success Criteria, the `<critical>`/`<requirements>` blocks, and the `title` frontmatter value) in Portuguese (pt-BR). Keep `status`/`type`/`complexity` frontmatter keys and enum values, file paths, and test/ADR IDs in English — the pipeline scripts match them literally.
    - Reassess complexity based on exploration findings and update if changed.
    - Update the task file in place with enriched content.
    - If enrichment fails for one task, continue to the next and report all failures at the end.
 
 8. Validate manually.
    - There is no external validator command — perform the checklist in `references/task-context-schema.md` ("Manual Validation") yourself: valid frontmatter on every file, allowed `type`/`complexity` values, `title` matching the H1, `_tasks.md` graph covering every task exactly once with no dangling edges, and an acyclic graph. Fix any issue found and re-check.
-   - Audit the test assignment: every ID in `_tests.md` appears in exactly one task file's `## Tests` section. Fix any orphan or duplicate and re-audit.
+   - Audit the test assignment: every ID in `_tests.md` appears in exactly one task file's `## Testes` section. Fix any orphan or duplicate and re-audit.
 
 ## Error Handling
 

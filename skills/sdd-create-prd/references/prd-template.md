@@ -2,36 +2,36 @@
 
 Use this template to structure every Product Requirements Document. The PRD is consumed by LLM agents downstream (`sdd-create-techspec`, `sdd-create-tasks`, `sdd-execute-task`, review rounds): it exists to give them business rules, domain behavior, and product intent.
 
-Fill each section based on brainstorming outcomes. Leave placeholder guidance in sections where information is insufficient and note them in Open Questions.
+Fill each section based on brainstorming outcomes. Leave placeholder guidance in sections where information is insufficient and note them in Open Questions. The generated document's headers and prose MUST be written in Portuguese (pt-BR) — use the exact section headers below, translated, as shown.
 
-## Overview
+## Visão Geral
 
 High-level overview of the feature or product. Describe:
 - What problem it solves
 - Who it is for
 - Why it is valuable
 
-## Goals
+## Objetivos
 
 Product outcomes stated as observable behavior, not metrics:
 - What users can do after this ships that they could not do before
 - What the system guarantees or enforces once the feature exists
 - What becomes unnecessary, automatic, or impossible for users
 
-## User Stories
+## Histórias de Usuário
 
 Index into `_user_stories.md`, the canonical story catalog — do not restate stories here:
 - One line per feature area: the `US-NNN` range it covers and its theme
-- Link the catalog: [Full user stories](_user_stories.md)
+- Link the catalog: [Histórias de usuário completas](_user_stories.md)
 
-## Core Features
+## Funcionalidades Principais
 
 Main features of the product:
 - Feature name: what it does, why it is important, high-level behavior
 - Functional requirements for each feature
 - Interaction between features
 
-## Business Rules
+## Regras de Negócio
 
 Domain rules the implementation must enforce, stated precisely:
 - Invariants that must always hold (e.g., "a run belongs to exactly one workspace")
@@ -40,7 +40,7 @@ Domain rules the implementation must enforce, stated precisely:
 - Lifecycle and state-transition rules (which states exist, what may move where, and when)
 - Calculations, limits, and defaults with their exact values
 
-## User Experience
+## Experiência do Usuário
 
 User journey from first contact to regular use:
 - Key personas and their goals
@@ -48,7 +48,7 @@ User journey from first contact to regular use:
 - UI/UX considerations and accessibility requirements
 - Onboarding and discoverability
 
-## High-Level Technical Constraints
+## Restrições Técnicas de Alto Nível
 
 Required boundaries that shape the product without prescribing implementation:
 - Required integrations with existing systems
@@ -58,7 +58,7 @@ Required boundaries that shape the product without prescribing implementation:
 
 Implementation choices — databases, frameworks, API designs, architecture patterns — belong to the TechSpec.
 
-## Non-Goals (Out of Scope)
+## Não Objetivos (Fora de Escopo)
 
 Capabilities the user decided this feature will not include:
 - Adjacent problems that will not be addressed, and why
@@ -66,12 +66,12 @@ Capabilities the user decided this feature will not include:
 
 Exclusions record user decisions, never size management: a wanted capability stays in scope no matter how large the document grows.
 
-## Architecture Decision Records
+## Registros de Decisão de Arquitetura
 
 ADRs documenting key decisions made during brainstorming:
-- [ADR-NNN: Title](adrs/adr-NNN.md) — One-line summary of the decision
+- [ADR-NNN: Título](adrs/adr-NNN.md) — One-line summary of the decision
 
-## Open Questions
+## Questões Abertas
 
 Remaining items that need clarification:
 - Unclear requirements

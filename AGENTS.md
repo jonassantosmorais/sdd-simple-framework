@@ -21,6 +21,11 @@ for the full reference.
   afterward.
 - Planning artifacts live under `.docs/tasks/<slug>/`. Do not hand-roll a different location.
 
+## Language
+
+- **MUST** write all generated documentation (PRDs, TechSpecs, tasks, ADRs, user stories, test contracts, review issues) and all code comments in Portuguese (pt-BR), 100% — no mixed-language prose.
+- **NEVER** translate identifiers (variable/function/class/file names), frontmatter keys and enum values (`status`, `type`, `complexity`, `severity`, etc.), commands, or third-party code — only prose and comments change language.
+
 ## Build & Verification
 
 ```bash

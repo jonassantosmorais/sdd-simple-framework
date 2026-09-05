@@ -51,7 +51,7 @@ Track each step as a task in the runtime's task tracker when one is available, a
    - Keep grilling until every branch that shapes the design is resolved or explicitly parked — the question count is an output of the tree, not a budget.
 
 3. Record ADRs for significant technical decisions.
-   - For each significant decision (architecture pattern, technology choice, data model approach): read `references/adr-template.md`, determine the next number from the files in `adrs/`, fill the template (chosen design as Decision, rejected alternatives as Alternatives Considered, trade-offs as Consequences; Status "Accepted", Date today), and write `adrs/adr-NNN.md` (zero-padded 3-digit sequential number).
+   - For each significant decision (architecture pattern, technology choice, data model approach): read `references/adr-template.md`, determine the next number from the files in `adrs/`, fill the template (chosen design as Decisão, rejected alternatives as Alternativas Consideradas, trade-offs as Consequências; Status "Aceito", Date today), and write `adrs/adr-NNN.md` (zero-padded 3-digit sequential number).
    - Even simple features get at least one ADR documenting the primary technical approach chosen and the alternatives rejected.
 
 4. Write the TechSpec.
@@ -59,7 +59,7 @@ Track each step as a task in the runtime's task tracker when one is available, a
    - Map every PRD goal and every story in `_user_stories.md` to a technical component; reference PRD sections by name without duplicating business context.
    - Core Interfaces must show the primary type other components depend on, in the project's primary language.
    - List every ADR in the Architecture Decision Records section; if step 3 produced none, go back and create at least one first.
-   - Prefer active voice and definite, specific language; every sentence earns its place. Language: English.
+   - Prefer active voice and definite, specific language; every sentence earns its place. Language: Portuguese (pt-BR).
    - Write `.docs/tasks/<name>/_techspec.md`.
 
 5. Write the test contract.
