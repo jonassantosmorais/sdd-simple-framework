@@ -14,19 +14,19 @@ A portable, CLI-free spec-driven development pipeline. It covers ideation, requi
 Key characteristics:
 
 - **Runtime-agnostic mechanics.** Every skill assumes only: a way to install Markdown skills (`skills/<name>/SKILL.md`), an interactive question tool, and a subagent/Agent dispatch facility. No specific CLI binary is required.
-- **Artifact-driven.** Planning and review artifacts live as Markdown under `.sdd/tasks/<slug>/`, versioned alongside the codebase.
+- **Artifact-driven.** Planning and review artifacts live as Markdown under `.docs/tasks/<slug>/`, versioned alongside the codebase.
 - **Human-in-the-loop by design.** Every planning phase (PRD, TechSpec) gates on interactive questions before writing. Execution and remediation phases run uninterrupted once scoped, because pausing mid-batch defeats automation.
 
 ## Workflow Pipeline Overview
 
-1. **Ideation** (optional) — `/sdd-idea` expands a raw idea into a structured, research-backed spec at `.sdd/tasks/<slug>/_idea.md`, optionally using the council agents in `agents/` for a multi-perspective debate.
-2. **Requirements** — `/sdd-create-prd` creates a business-focused Product Requirements Document at `.sdd/tasks/<slug>/_prd.md` plus the user-story catalog `_user_stories.md`, with ADRs.
-3. **Technical Design** — `/sdd-create-techspec` translates the PRD into a technical specification at `.sdd/tasks/<slug>/_techspec.md` plus the test contract `_tests.md`, with ADRs.
+1. **Ideation** (optional) — `/sdd-idea` expands a raw idea into a structured, research-backed spec at `.docs/tasks/<slug>/_idea.md`, optionally using the council agents in `agents/` for a multi-perspective debate.
+2. **Requirements** — `/sdd-create-prd` creates a business-focused Product Requirements Document at `.docs/tasks/<slug>/_prd.md` plus the user-story catalog `_user_stories.md`, with ADRs.
+3. **Technical Design** — `/sdd-create-techspec` translates the PRD into a technical specification at `.docs/tasks/<slug>/_techspec.md` plus the test contract `_tests.md`, with ADRs.
 4. **Task Decomposition** — `/sdd-create-tasks` breaks down the PRD and TechSpec into robust, independently implementable task files (`task_01.md`, `task_02.md`, etc.) and a canonical task graph manifest at `_tasks.md`, assigning every `_tests.md` case to a task.
 5. **Execution** — invoke `/sdd-execute-task` directly on one task file, or run `scripts/run-tasks.sh <slug>` to dispatch every pending task in `_tasks.md` dependency order (parallel within a wave, sequential across waves).
 6. **Review** — `/sdd-review` performs a manual AI review of the implementation and writes review issue files under `reviews-NNN/`.
 7. **Remediation** — `/sdd-fix-reviews` processes the review issue files: triages, fixes, and verifies each one.
-8. **Archive** — once all reviews are clean, move the workflow directory to `.sdd/tasks/_archived/<timestamp>-<slug>/` (a plain `mv`; no tooling required) and merge.
+8. **Archive** — once all reviews are clean, move the workflow directory to `.docs/tasks/_archived/<timestamp>-<slug>/` (a plain `mv`; no tooling required) and merge.
 
 Repeat steps 6–7 until the review is clean, then merge.
 
@@ -74,7 +74,7 @@ Plus a set of general-purpose engineering skills bundled alongside the pipeline 
 ## Artifact Directory Structure
 
 ```
-.sdd/
+.docs/
   config.toml                          # Optional workspace configuration
   tasks/
     <slug>/                            # One directory per workflow
@@ -98,7 +98,7 @@ Plus a set of general-purpose engineering skills bundled alongside the pipeline 
 
 ## Configuration
 
-Workspace defaults, if you want them, live in an optional `.sdd/config.toml` read directly by the skills (no parser required — it's plain text an agent reads):
+Workspace defaults, if you want them, live in an optional `.docs/config.toml` read directly by the skills (no parser required — it's plain text an agent reads):
 
 ```toml
 [tasks]
@@ -125,9 +125,9 @@ Six standalone reviewer personas live in `agents/`, installable as subagents in 
 ## Common Patterns
 
 - Follow the pipeline in order: idea (optional) -> PRD -> TechSpec -> Tasks -> Execution -> Review -> Fix.
-- Configure `.sdd/config.toml` only if the built-in task-type defaults don't fit the project.
+- Configure `.docs/config.toml` only if the built-in task-type defaults don't fit the project.
 - Run `scripts/run-tasks.sh <slug>` for unattended batch execution across a task graph; invoke `sdd-execute-task` directly for a single task.
-- Archive a workflow (`mv .sdd/tasks/<slug> .sdd/tasks/_archived/<timestamp>-<slug>`) once all reviews are clean, to keep the tasks directory focused.
+- Archive a workflow (`mv .docs/tasks/<slug> .docs/tasks/_archived/<timestamp>-<slug>`) once all reviews are clean, to keep the tasks directory focused.
 
 ## Anti-Patterns
 

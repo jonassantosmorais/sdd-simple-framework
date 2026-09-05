@@ -39,7 +39,7 @@ Individual task files own task metadata only. They do not own graph topology.
 
 - `status`: Task lifecycle state.
 - `title`: Human-readable task title. It must match the first H1 in the task body.
-- `type`: Allowed work type slug. Use `[tasks].types` from `.sdd/config.toml` when configured; otherwise use the built-in defaults `frontend`, `backend`, `docs`, `test`, `infra`, `refactor`, `chore`, `bugfix`.
+- `type`: Allowed work type slug. Use `[tasks].types` from `.docs/config.toml` when configured; otherwise use the built-in defaults `frontend`, `backend`, `docs`, `test`, `infra`, `refactor`, `chore`, `bugfix`.
 - `complexity`: Risk rating. Must be one of: `low`, `medium`, `high`, `critical`. Complexity rates implementation risk (regression surface, concurrency, cross-task coordination), not size — a large but well-specified task can be `low`, and a high rating is never a reason to split the task.
 
 Do not include `dependencies` in individual task frontmatter. Dependencies belong only in `_tasks.md` under `graph.edges`.

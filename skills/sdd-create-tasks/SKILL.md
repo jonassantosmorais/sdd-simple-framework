@@ -22,20 +22,20 @@ Every task becomes one full agent run: a fresh context that re-reads the spec co
 
 ## Required Inputs
 
-- Feature name identifying the `.sdd/tasks/<name>/` directory.
+- Feature name identifying the `.docs/tasks/<name>/` directory.
 - At minimum, `_prd.md` or `_techspec.md` in that directory.
 - When present: `_tests.md` (test contract) and `_user_stories.md` (story catalog).
 
 ## Workflow
 
 1. Load type registry.
-   - Read `.sdd/config.toml` if it exists.
+   - Read `.docs/config.toml` if it exists.
    - If it contains `[tasks].types`, use that list as the allowed `type` values.
    - Otherwise use the built-in defaults: `frontend`, `backend`, `docs`, `test`, `infra`, `refactor`, `chore`, `bugfix`.
 
 2. Load context.
-   - Read `_prd.md`, `_techspec.md`, `_user_stories.md`, and `_tests.md` from `.sdd/tasks/<name>/`.
-   - Read existing ADRs from `.sdd/tasks/<name>/adrs/` to understand the decision context behind requirements and design choices.
+   - Read `_prd.md`, `_techspec.md`, `_user_stories.md`, and `_tests.md` from `.docs/tasks/<name>/`.
+   - Read existing ADRs from `.docs/tasks/<name>/adrs/` to understand the decision context behind requirements and design choices.
    - If `_techspec.md` is missing:
      - Warn the user that tasks will be higher-level without TechSpec implementation guidance.
      - Derive tasks from PRD functional requirements and the `_user_stories.md` catalog instead of TechSpec implementation sections.

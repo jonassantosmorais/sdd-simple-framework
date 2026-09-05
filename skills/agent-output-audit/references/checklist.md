@@ -7,7 +7,7 @@ Mark every item as complete before claiming the audit is done.
 - [ ] Root instructions and repository docs were read
 - [ ] The canonical verify gate was identified or an explicit fallback was chosen
 - [ ] The audit-output directory was resolved and `audit/` subdir created
-- [ ] spec-workflow mode was detected (yes/no with `.sdd/tasks/<slug>/` path or "none")
+- [ ] spec-workflow mode was detected (yes/no with `.docs/tasks/<slug>/` path or "none")
 - [ ] When in spec-workflow mode, `state.yaml`, `_techspec.md`, `_tasks.md` were read (state.yaml read-only)
 - [ ] E2E support was determined (supported, manual-only, or blocked with evidence)
 
@@ -39,7 +39,7 @@ Skip this section only if no task, phase, PRD, tech spec, or implementation-plan
 - [ ] Large missing features were not silently passed as audit success
 - [ ] The audit report includes a Task Implementation Audit section with per-task verdicts
 - [ ] Task frontmatter `status:` was used as the declared status; `state.yaml` was read but not written
-- [ ] When running in `.sdd/tasks/<slug>/`, `memory/qa-execution.md` was written with canonical sections **before** any frontmatter status was flipped (memory-precedes-status invariant)
+- [ ] When running in `.docs/tasks/<slug>/`, `memory/qa-execution.md` was written with canonical sections **before** any frontmatter status was flipped (memory-precedes-status invariant)
 
 ## Independent Evaluator Stance
 

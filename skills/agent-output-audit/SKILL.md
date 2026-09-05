@@ -25,11 +25,11 @@ You are the **independent evaluator**. Answer one question — *"Did the impleme
 3. Prefer repository-defined umbrella commands (`make verify`, `just verify`, CI entrypoints) over language defaults. When discovery surfaces more than one plausible gate or mixes ecosystems, read `references/project-signals.md` before choosing, and state the tie-breaker.
 4. Read `references/e2e-coverage.md` before classifying any flow's coverage.
 5. Resolve the audit artifact directory: the `audit-output-path` argument if given, else repository conventions, else `/tmp/agent-output-audit-<slug>`. Create its `audit/` subdirectory; store all bugs and reports under `<audit-output-path>/audit/`.
-6. **Detect spec-workflow mode.** If `.sdd/tasks/<slug>/` exists, record the slug and:
+6. **Detect spec-workflow mode.** If `.docs/tasks/<slug>/` exists, record the slug and:
    - Read `state.yaml` **read-only** — `scripts/update-state.py` owns its mutation per the the task-execution loop contract.
    - Read `_techspec.md` (deliverable source of truth) and `_tasks.md` (task roster) when present.
    - List every `task_NN.md` and capture its frontmatter `status:` (`pending` | `in_progress` | `completed`). When frontmatter disagrees with `state.yaml`, frontmatter is the source of truth.
-   - Note the memory slot `.sdd/tasks/<slug>/memory/qa-execution.md` — Step 5 writes it before any status flip.
+   - Note the memory slot `.docs/tasks/<slug>/memory/qa-execution.md` — Step 5 writes it before any status flip.
 
 ## Step 2: Run the Baseline Verification Gate
 

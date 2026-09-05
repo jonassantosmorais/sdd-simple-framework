@@ -1,6 +1,6 @@
 ---
 name: sdd-fix-reviews
-description: Executes review remediation using existing review round files under .sdd/tasks/<name>/reviews-NNN/. Use when resolving batched review issues, updating issue markdown files, implementing fixes, and verifying the result. Do not use for PRD task execution or generic coding tasks without review issue files.
+description: Executes review remediation using existing review round files under .docs/tasks/<name>/reviews-NNN/. Use when resolving batched review issues, updating issue markdown files, implementing fixes, and verifying the result. Do not use for PRD task execution or generic coding tasks without review issue files.
 ---
 
 # Fix Reviews

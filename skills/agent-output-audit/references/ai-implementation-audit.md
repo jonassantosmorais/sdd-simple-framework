@@ -15,7 +15,7 @@ This reference catalogs the **observable signals** `agent-output-audit` uses whe
 
 - Any task with `declared_status: completed` whose implementation includes new or modified test files.
 - Any commit that touches both production code and its sibling test in the same change set.
-- Any `the task-execution loop` spec-workflow slug under `.sdd/tasks/<slug>/` where the implementing agent self-reported success.
+- Any `the task-execution loop` spec-workflow slug under `.docs/tasks/<slug>/` where the implementing agent self-reported success.
 
 ## Red Flag Scanners
 
@@ -124,7 +124,7 @@ Record findings in three places:
 
 1. `audit-report.md` → `TASK IMPLEMENTATION AUDIT` block → per-task `AI audit findings:` field (list red flag IDs that fired with their verdicts).
 2. `audit-report.md` → `SUITE HEALTH SNAPSHOT` → `AI audit findings:` count.
-3. spec-workflow mode only: `.sdd/tasks/<slug>/memory/qa-execution.md` → `Errors / Corrections` section, **before** any frontmatter status flip (memory-precedes-status invariant).
+3. spec-workflow mode only: `.docs/tasks/<slug>/memory/qa-execution.md` → `Errors / Corrections` section, **before** any frontmatter status flip (memory-precedes-status invariant).
 
 ## Sources
 

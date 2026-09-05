@@ -58,8 +58,8 @@ All inputs are optional. Defaults make the common path `impl-peer-review` with n
 Resolve `<out>` in this order:
 
 1. `--out` if provided.
-2. Otherwise, if the repo exposes an unambiguous `.sdd/tasks/<slug>/` layout for the current
-   work, use that task's `qa/` directory: `.sdd/tasks/<slug>/qa/`.
+2. Otherwise, if the repo exposes an unambiguous `.docs/tasks/<slug>/` layout for the current
+   work, use that task's `qa/` directory: `.docs/tasks/<slug>/qa/`.
 3. Otherwise, default to `.peer-reviews/<UTC-timestamp-YYYYMMDDTHHMMSSZ>/` at the repository root.
 
 Create the directory if it does not exist. Every artifact is versioned with `-roundN`; never
@@ -127,7 +127,7 @@ independent pass.
    - `{scope_summary}` — one-paragraph description of what was implemented. Derive from the user's
      brief, the commit messages, or — if `--context` was passed — the linked spec/PRD.
    - `{context_paths}` — newline-separated repo-root paths from `--context`, or `none`. When the
-     reviewed diff implements a task from a spec directory (e.g. `.sdd/tasks/<slug>/`,
+     reviewed diff implements a task from a spec directory (e.g. `.docs/tasks/<slug>/`,
      `specs/<name>/`, `docs/rfcs/<name>/`), also include that spec's contract-bearing sibling
      artifacts here even when the user passed no `--context` (see Guardrails: Contract parity).
    - `{project_rules}` — newline-separated discovered rule-file paths, or `none`.
@@ -216,7 +216,7 @@ independent pass.
 ## Guardrails
 
 **Contract parity.** For a spec-workflow diff, engineering quality alone can never earn `SHIP`.
-When the diff implements a task from a spec directory (`.sdd/tasks/<slug>/`, `specs/<name>/`,
+When the diff implements a task from a spec directory (`.docs/tasks/<slug>/`, `specs/<name>/`,
 `docs/rfcs/<name>/`), the reviewer must receive that spec's contract-bearing sibling artifacts —
 canonical example documents, input/schema tables, QA seeds, test contracts, parity maps — and
 assess the deliverable against them field by field. A round whose `{context_paths}` omitted those

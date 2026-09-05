@@ -26,7 +26,7 @@ This is not about distrust of the model. It is about how context affects evaluat
 
 ## Sequence
 
-When auditing a task under `.sdd/tasks/<slug>/`:
+When auditing a task under `.docs/tasks/<slug>/`:
 
 1. **Read the implementer's artifacts before forming a judgment.** Open every `memory/<phase>.md` file the implementing agent wrote during `the task-execution loop`. Read for: tools the agent used to bypass blockers, errors it "fixed" by deleting an assertion, fallback paths it took when the real path failed, ambiguity it resolved unilaterally.
 2. **Classify anomalies** found in the transcript into one of:

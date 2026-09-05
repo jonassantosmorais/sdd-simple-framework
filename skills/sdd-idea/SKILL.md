@@ -1,6 +1,6 @@
 ---
 name: sdd-idea
-description: Expands a raw idea into a structured, research-backed spec in .sdd/tasks/<slug>/_idea.md through interactive brainstorming, web research, business analysis, and multi-advisor debate. Use when the user has a feature idea and wants to explore and structure it before creating a PRD. Do not use for PRD creation, technical specifications, task breakdown, or code implementation.
+description: Expands a raw idea into a structured, research-backed spec in .docs/tasks/<slug>/_idea.md through interactive brainstorming, web research, business analysis, and multi-advisor debate. Use when the user has a feature idea and wants to explore and structure it before creating a PRD. Do not use for PRD creation, technical specifications, task breakdown, or code implementation.
 argument-hint: [feature-idea]
 ---
 
@@ -34,7 +34,7 @@ Every idea goes through the full research and debate process. A single button, a
 
 You MUST create a task for each phase and complete them in order:
 
-1. **Determine project & directory** — derive slug, create `.sdd/tasks/<slug>/` and `adrs/`
+1. **Determine project & directory** — derive slug, create `.docs/tasks/<slug>/` and `adrs/`
 2. **Understand the idea** — ask 3-6 targeted questions to refine scope and intent
 3. **Research the market** — web research for competitive intelligence and market data + codebase exploration
 4. **Analyze business viability** — adopt business analyst persona (`references/business-analyst.md`) for KPIs, personas, and success metrics
@@ -42,16 +42,16 @@ You MUST create a task for each phase and complete them in order:
 6. **Scan for opportunities** — adopt product strategist persona (`references/product-strategist.md`) to suggest higher-leverage alternatives before committing to the draft
 7. **Draft the idea** — write using the canonical template from `references/idea-template.md`
 8. **Review with user** — present the draft, iterate until approved
-9. **Save the file** — write to `.sdd/tasks/<slug>/_idea.md`
+9. **Save the file** — write to `.docs/tasks/<slug>/_idea.md`
 
 ## Workflow
 
 1. Determine the project name and working directory.
    - Derive the slug from the feature idea provided by the user.
-   - Use `.sdd/tasks/<slug>/` as the target directory.
+   - Use `.docs/tasks/<slug>/` as the target directory.
    - If `_idea.md` already exists in the target directory, read it and operate in update mode.
    - If the directory does not exist, create it.
-   - Create `.sdd/tasks/<slug>/adrs/` directory if it does not exist.
+   - Create `.docs/tasks/<slug>/adrs/` directory if it does not exist.
 
 2. Understand the idea through targeted questions.
    - Follow the question protocol in `references/question-protocol.md`.
@@ -119,9 +119,9 @@ You MUST create a task for each phase and complete them in order:
    - Extract: key trade-offs, recommended approach, items for out-of-scope (V1), optional stretch goal for V2+.
    - After the debate, create an ADR for the scope decision:
      - Read `references/adr-template.md`.
-     - Determine the next ADR number by listing existing files in `.sdd/tasks/<slug>/adrs/`.
+     - Determine the next ADR number by listing existing files in `.docs/tasks/<slug>/adrs/`.
      - Fill the template: recommended scope as "Decision", alternatives as "Alternatives Considered", trade-offs as "Consequences". Set Status to "Accepted" and Date to today.
-     - Write the ADR to `.sdd/tasks/<slug>/adrs/adr-NNN.md` (zero-padded 3-digit number).
+     - Write the ADR to `.docs/tasks/<slug>/adrs/adr-NNN.md` (zero-padded 3-digit number).
 
 6. Scan for opportunities.
    - Read `references/product-strategist.md` and adopt the product strategist persona.
@@ -162,8 +162,8 @@ You MUST create a task for each phase and complete them in order:
 9. Save the idea file.
    - Generate the slug: kebab-case, 2-5 words, descriptive (e.g., `smart-thumbnail-suggestions`).
    - Ask the user to confirm the filename using the interactive question tool:
-     - "Save as `.sdd/tasks/<slug>/_idea.md`? (A) Yes / (B) Different name"
-   - Write the file to `.sdd/tasks/<slug>/_idea.md`.
+     - "Save as `.docs/tasks/<slug>/_idea.md`? (A) Yes / (B) Different name"
+   - Write the file to `.docs/tasks/<slug>/_idea.md`.
    - Confirm the file path to the user.
    - Remind the user that the next step is to create a PRD using `sdd-create-prd` from this idea.
 

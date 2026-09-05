@@ -31,7 +31,7 @@ Ask every question through the runtime's dedicated interactive question tool —
 
 ## Required Inputs
 
-- Feature name identifying the `.sdd/tasks/<name>/` directory.
+- Feature name identifying the `.docs/tasks/<name>/` directory.
 - Optional: existing `_prd.md` and `_user_stories.md` as primary input.
 - Optional: existing `_techspec.md` for update mode.
 
@@ -40,8 +40,8 @@ Ask every question through the runtime's dedicated interactive question tool —
 Track each step as a task in the runtime's task tracker when one is available, and complete the steps in order.
 
 1. Gather context.
-   - Read `_prd.md` and `_user_stories.md` from `.sdd/tasks/<name>/` as the primary input. If no PRD exists, ask the user for a description of what needs technical specification.
-   - Read existing ADRs from `.sdd/tasks/<name>/adrs/` (create the directory if missing) to understand decisions already made.
+   - Read `_prd.md` and `_user_stories.md` from `.docs/tasks/<name>/` as the primary input. If no PRD exists, ask the user for a description of what needs technical specification.
+   - Read existing ADRs from `.docs/tasks/<name>/adrs/` (create the directory if missing) to understand decisions already made.
    - Spawn an Agent tool call to explore the codebase for architecture patterns, existing components, dependencies, and technology stack.
    - If `_techspec.md` already exists, read it and operate in update mode.
 
@@ -60,10 +60,10 @@ Track each step as a task in the runtime's task tracker when one is available, a
    - Core Interfaces must show the primary type other components depend on, in the project's primary language.
    - List every ADR in the Architecture Decision Records section; if step 3 produced none, go back and create at least one first.
    - Prefer active voice and definite, specific language; every sentence earns its place. Language: English.
-   - Write `.sdd/tasks/<name>/_techspec.md`.
+   - Write `.docs/tasks/<name>/_techspec.md`.
 
 5. Write the test contract.
-   - Read `references/tests-template.md` and write `.sdd/tasks/<name>/_tests.md`.
+   - Read `references/tests-template.md` and write `.docs/tasks/<name>/_tests.md`.
    - Derive unit cases from every component and interface in the TechSpec, including every error path; integration cases from every component boundary and external integration; end-to-end cases from every user journey in `_user_stories.md`.
    - Done when the coverage matrix satisfies the template's Coverage Demands and every case meets its Case-Writing Rules.
 

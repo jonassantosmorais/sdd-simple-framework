@@ -51,7 +51,7 @@ The PRD owns WHAT users need, WHY it provides value, and WHO the users are; HOW 
 Track each step as a task in the runtime's task tracker when one is available, and complete the steps in order.
 
 1. Determine the project and working directory.
-   - Derive the slug from the feature name; the target directory is `.sdd/tasks/<slug>/`.
+   - Derive the slug from the feature name; the target directory is `.docs/tasks/<slug>/`.
    - Create the directory and its `adrs/` subdirectory if missing.
    - If `_idea.md` exists there, read it as primary context.
    - If `_prd.md` exists, read it and operate in update mode.
@@ -67,11 +67,11 @@ Track each step as a task in the runtime's task tracker when one is available, a
 
 4. Decide the product approach and record ADRs.
    - Choose the strongest direction yourself from the answers and research.
-   - Read `references/adr-template.md`, determine the next number from the files in `.sdd/tasks/<slug>/adrs/`, fill the template (chosen direction as Decision, weighed alternatives with trade-offs as Alternatives Considered, outcomes as Consequences; Status "Accepted", Date today), and write `adrs/adr-NNN.md` (zero-padded 3-digit number).
+   - Read `references/adr-template.md`, determine the next number from the files in `.docs/tasks/<slug>/adrs/`, fill the template (chosen direction as Decision, weighed alternatives with trade-offs as Alternatives Considered, outcomes as Consequences; Status "Accepted", Date today), and write `adrs/adr-NNN.md` (zero-padded 3-digit number).
    - Record any additional significant scope decision that surfaced during clarification as its own ADR.
 
 5. Write the user-story catalog.
-   - Read `references/user-stories-template.md` and write `.sdd/tasks/<slug>/_user_stories.md`.
+   - Read `references/user-stories-template.md` and write `.docs/tasks/<slug>/_user_stories.md`.
    - Cover every persona — secondary ones included — and every core feature.
    - Run the template's edge-case sweep against every story.
    - Done when every core feature has stories, every story has verifiable acceptance criteria plus edge cases with expected behavior, and every edge-case class has been probed against every story.
@@ -80,7 +80,7 @@ Track each step as a task in the runtime's task tracker when one is available, a
    - Read `references/prd-template.md` and fill every section with the decided direction and confirmed answers; the template carries the per-section rules.
    - List every ADR from this session in the Architecture Decision Records section.
    - Prefer active voice and definite, specific language; every sentence earns its place. Language: English.
-   - Write `.sdd/tasks/<slug>/_prd.md`.
+   - Write `.docs/tasks/<slug>/_prd.md`.
 
 7. Hand off.
    - Confirm both file paths to the user and invite change requests directly on the generated files.

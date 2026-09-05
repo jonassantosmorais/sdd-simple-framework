@@ -50,7 +50,7 @@ When a `flaky-suspect` is confirmed flaky after the diagnosis protocol (i.e., th
 
 ## spec-workflow mode interaction
 
-When the failing test is associated with a task whose `declared_status: completed` and the task lives under `.sdd/tasks/<slug>/`:
+When the failing test is associated with a task whose `declared_status: completed` and the task lives under `.docs/tasks/<slug>/`:
 
 - If the failure is `flaky-suspect` on a **P0/P1** flow proving the task: degrade `qa_verdict` to `PARTIAL`, file `BUG-<num>.md` with Status `flaky-suspect`, and do **not** promote the task. Write the finding to `memory/qa-execution.md` → `Errors / Corrections` **before** flipping any frontmatter status (memory-precedes-status invariant).
 - If the failure is `flaky-suspect` on a non-critical flow: record in the SUITE HEALTH SNAPSHOT, file `BUG-<num>.md`, but do not degrade the task verdict.

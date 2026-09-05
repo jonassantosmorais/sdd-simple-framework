@@ -1,7 +1,7 @@
 AUDIT REPORT
 ------------
 Claim: <what is being audited (e.g., "spec-workflow slug auth-refactor task_07 status: completed")>
-spec-workflow slug: <.sdd/tasks/<slug>/ or "n/a">
+spec-workflow slug: <.docs/tasks/<slug>/ or "n/a">
 Command: `<full verification command>`
 Executed: <timestamp or relative time>
 Exit code: <0 or non-zero>
@@ -54,7 +54,7 @@ Results:
     Action: <none | fixed | frontmatter reverted to <status> | BUG-NNN filed>
 Reopened tasks (frontmatter reverted from `completed`):
   - <task_NN.md path>: <reason> | New frontmatter status: <pending | in_progress> | Bug: <BUG-NNN or none>
-Memory file written: <.sdd/tasks/<slug>/memory/qa-execution.md or "n/a">
+Memory file written: <.docs/tasks/<slug>/memory/qa-execution.md or "n/a">
 state.yaml: read-only (the task-execution loop owns mutation via update-state.py)
 
 SUITE HEALTH SNAPSHOT

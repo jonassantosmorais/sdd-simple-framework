@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Dispatch every pending task_NN.md in .sdd/tasks/<slug>/ to the sdd-execute-task skill,
+# Dispatch every pending task_NN.md in .docs/tasks/<slug>/ to the sdd-execute-task skill,
 # respecting the dependency waves declared in _tasks.md's graph.edges.
 #
 # This is the batch-execution replacement for a CLI dispatcher: no daemon, no run registry —
@@ -7,7 +7,7 @@
 # parallel background jobs; the script waits for the whole wave before starting the next one.
 #
 # Usage:
-#   scripts/run-tasks.sh <slug> [--dir .sdd/tasks] [--agent-cmd "claude -p"] [--auto-commit]
+#   scripts/run-tasks.sh <slug> [--dir .docs/tasks] [--agent-cmd "claude -p"] [--auto-commit]
 #
 # Requirements: bash, the `claude` CLI (or another headless-invokable agent CLI passed via
 # --agent-cmd) on PATH, and a `_tasks.md` written by sdd-create-tasks in the canonical shape.
@@ -15,7 +15,7 @@
 set -euo pipefail
 
 SLUG=""
-TASKS_ROOT=".sdd/tasks"
+TASKS_ROOT=".docs/tasks"
 AGENT_CMD="claude -p"
 AUTO_COMMIT=""
 
@@ -30,7 +30,7 @@ while [[ $# -gt 0 ]]; do
 done
 
 if [[ -z "$SLUG" ]]; then
-  echo "Usage: $0 <slug> [--dir .sdd/tasks] [--agent-cmd \"claude -p\"] [--auto-commit]" >&2
+  echo "Usage: $0 <slug> [--dir .docs/tasks] [--agent-cmd \"claude -p\"] [--auto-commit]" >&2
   exit 1
 fi
 

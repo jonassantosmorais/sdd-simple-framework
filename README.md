@@ -44,7 +44,7 @@ different runtime.
 ```
 
 Read [`skills/sdd/SKILL.md`](skills/sdd/SKILL.md) for the full reference: pipeline diagram,
-artifact directory layout, the skill table, and the optional `.sdd/config.toml`.
+artifact directory layout, the skill table, and the optional `.docs/config.toml`.
 
 ## What's in here
 
@@ -74,7 +74,7 @@ If your project needs stack-specific skills, add your own alongside these.
 
 ## Customizing
 
-- `.sdd/config.toml` is optional; only `[tasks].types` is read, to override the default task-type
+- `.docs/config.toml` is optional; only `[tasks].types` is read, to override the default task-type
   enum (`frontend`, `backend`, `docs`, `test`, `infra`, `refactor`, `chore`, `bugfix`).
 - Add a project `CLAUDE.md`/`AGENTS.md` pointing at these skills — see `AGENTS.md` in this
   directory for a starting template.

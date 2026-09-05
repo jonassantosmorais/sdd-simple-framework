@@ -19,7 +19,7 @@ for the full reference.
 - **NEVER** hand-edit task file frontmatter without re-checking
   `skills/sdd-create-tasks/references/task-context-schema.md`'s Manual Validation checklist
   afterward.
-- Planning artifacts live under `.sdd/tasks/<slug>/`. Do not hand-roll a different location.
+- Planning artifacts live under `.docs/tasks/<slug>/`. Do not hand-roll a different location.
 
 ## Build & Verification
 

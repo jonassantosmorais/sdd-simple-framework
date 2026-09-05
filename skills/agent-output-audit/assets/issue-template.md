@@ -17,7 +17,7 @@
 
 - **Build:** <version or commit>
 - **OS:** <operating system if relevant>
-- **spec-workflow slug:** <.sdd/tasks/<slug>/ or "n/a">
+- **spec-workflow slug:** <.docs/tasks/<slug>/ or "n/a">
 
 ## Summary
 
@@ -77,7 +77,7 @@ Observed before the fix:
 ## Transcript Anomaly (when applicable)
 
 - **Classification:** genuine-failure | grader-bug | ambiguous-task | bypass-exploit
-- **Evidence path:** <.sdd/tasks/<slug>/memory/<phase>.md line or section>
+- **Evidence path:** <.docs/tasks/<slug>/memory/<phase>.md line or section>
 
 ## Related
 

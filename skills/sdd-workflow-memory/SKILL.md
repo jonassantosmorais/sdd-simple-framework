@@ -1,6 +1,6 @@
 ---
 name: sdd-workflow-memory
-description: Maintains workflow-scoped task memory using .sdd/tasks/<name>/memory/ files. Use when a task prompt provides workflow memory paths and requires the agent to read, update, compact, and promote durable context across PRD task executions. Do not use for PR review remediation, global user preferences, or programmatic event-log summarization.
+description: Maintains workflow-scoped task memory using .docs/tasks/<name>/memory/ files. Use when a task prompt provides workflow memory paths and requires the agent to read, update, compact, and promote durable context across PRD task executions. Do not use for PR review remediation, global user preferences, or programmatic event-log summarization.
 ---
 
 # Workflow Memory

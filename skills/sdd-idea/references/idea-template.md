@@ -1,6 +1,6 @@
 # Idea Template
 
-Use this template to structure every idea in `.sdd/tasks/<slug>/_idea.md`. Fill each section based on research and brainstorming outcomes. Leave placeholder guidance in sections where information is insufficient and note them in Open Questions.
+Use this template to structure every idea in `.docs/tasks/<slug>/_idea.md`. Fill each section based on research and brainstorming outcomes. Leave placeholder guidance in sections where information is insufficient and note them in Open Questions.
 
 ## Overview
 

@@ -9,21 +9,21 @@ Perform a structured code review of a PRD implementation and produce a review ro
 
 ## Required Inputs
 
-- Feature name identifying the `.sdd/tasks/<name>/` directory.
+- Feature name identifying the `.docs/tasks/<name>/` directory.
 - Optional: specific files or directories to scope the review.
 
 ## Workflow
 
 1. Determine the review round directory.
-   - Derive the PRD directory from the feature name: `.sdd/tasks/<name>/`.
+   - Derive the PRD directory from the feature name: `.docs/tasks/<name>/`.
    - Verify the PRD directory exists. If it does not, stop and report the missing directory.
    - List existing `reviews-NNN/` subdirectories to determine the next round number. If none exist, use round 1.
    - If prior review rounds exist, read their issue files to build a list of already-known issues. The current round must only contain NEW issues not already tracked in prior rounds. Do not re-flag issues that are pending, valid, or resolved in earlier rounds.
-   - Determine the review round directory path: `.sdd/tasks/<name>/reviews-NNN/` with the round number zero-padded to 3 digits. Do NOT create it yet — wait until step 4 confirms there are issues to write. This avoids leaving empty directories when the review finds no issues.
+   - Determine the review round directory path: `.docs/tasks/<name>/reviews-NNN/` with the round number zero-padded to 3 digits. Do NOT create it yet — wait until step 4 confirms there are issues to write. This avoids leaving empty directories when the review finds no issues.
 
 2. Identify the review scope.
    - Read `_prd.md`, `_techspec.md`, and `_tasks.md` from the PRD directory to understand what was implemented and why, plus the contract catalogs `_user_stories.md` and `_tests.md` when present.
-   - Read ADRs from `.sdd/tasks/<name>/adrs/` for architectural decision context.
+   - Read ADRs from `.docs/tasks/<name>/adrs/` for architectural decision context.
    - If `_prd.md` and `_techspec.md` are both missing, warn that the review will lack requirements context but proceed with a code-quality-only review.
    - If the user provided specific files or directories, scope the review to those paths.
    - If no explicit scope was provided, run `git diff main...HEAD --name-only` to discover all files created or modified on the current branch. If the diff is empty or unhelpful, ask the user to specify files.

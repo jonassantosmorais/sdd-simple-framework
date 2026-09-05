@@ -48,7 +48,7 @@ message and stop generating, and let the user answer.
 
 - **spec-path** (optional): explicit path to the spec under review (a TechSpec, design doc,
   RFC, or detailed PRD). When omitted, auto-resolve to the most recently modified
-  `.sdd/tasks/<slug>/_techspec.md` **if** that layout exists; otherwise ask the user for
+  `.docs/tasks/<slug>/_techspec.md` **if** that layout exists; otherwise ask the user for
   a path. Never invent a path.
 - `--context <p1,p2,...>` (optional): additional context files for the reviewer (ADRs, related
   specs, RFCs, research, design docs).
@@ -62,8 +62,8 @@ message and stop generating, and let the user answer.
 Resolve `<out>` in this order, and create the directory if it does not exist:
 
 1. `--out` if provided.
-2. Otherwise, if the spec resolves under a `.sdd/tasks/<slug>/` layout, use that task's
-   `qa/` directory: `.sdd/tasks/<slug>/qa/`.
+2. Otherwise, if the spec resolves under a `.docs/tasks/<slug>/` layout, use that task's
+   `qa/` directory: `.docs/tasks/<slug>/qa/`.
 3. Otherwise, `.peer-reviews/<UTC-timestamp-YYYYMMDDTHHMMSSZ>/` at the repository root.
 
 ## Findings file
@@ -84,7 +84,7 @@ about the spec yourself in the current session.
 
 **Step 1: Validate input and context**
 
-1. Resolve `spec-path` (see Inputs). If omitted and no `.sdd/tasks/<slug>/_techspec.md`
+1. Resolve `spec-path` (see Inputs). If omitted and no `.docs/tasks/<slug>/_techspec.md`
    exists, ask the user for a path and stop.
 2. Confirm the user has approved the current draft or asked to review the saved spec as-is.
 3. Read the spec; confirm it is a final-shape design (boundaries, plan, verification strategy),
@@ -114,7 +114,7 @@ about the spec yourself in the current session.
    - `{spec_path}` — exact path to the spec under review.
    - `{context_paths}` — newline-separated `--context` paths, or the literal `none`.
      **Spec-corpus rule:** when the spec resolves under a spec directory (e.g.
-     `.sdd/tasks/<slug>/`), also resolve and include its sibling corpus —
+     `.docs/tasks/<slug>/`), also resolve and include its sibling corpus —
      requirements/use-case documents, canonical example documents, input tables, QA seeds,
      test contracts, analysis summaries, ADRs — even when the user passed no `--context`. A
      round that omits the sibling corpus is invalid: reviewing a spec in isolation from its own
